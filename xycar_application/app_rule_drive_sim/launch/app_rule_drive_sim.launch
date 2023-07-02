@@ -1,0 +1,8 @@
+<launch>
+  <node name="simulator"  pkg="xycar_sim_driving" type="main" output="screen">
+    <param name="map_name" value="square"/>
+    <param name="range_sensor" value="ultrasonic"/> <!-- ultrasonic, lidar -->
+    <param name="drive_mode" value="ros"/> <!-- ros, keyboard -->
+  </node>
+  <node name="rule_drive" pkg="app_rule_drive_sim" type="app_rule_drive_sim.py" output="screen"/>
+</launch>

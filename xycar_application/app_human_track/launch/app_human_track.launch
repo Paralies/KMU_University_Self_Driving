@@ -1,0 +1,18 @@
+<launch>
+
+  <!-- Motor node -->
+  <include file="$(find xycar_motor)/launch/xycar_motor.launch" />
+  
+  <!-- USB Camera node -->
+  <include file="$(find usb_cam)/launch/xycar_cam.launch" />
+  
+  <!-- Lidar sensor node -->
+  <include file="$(find xycar_lidar)/launch/xycar_lidar.launch" />
+
+  <!--steering-->
+  <node pkg="app_human_track" type="app_human_track.py" name="SSD_driver" output="screen">
+    <param name="model_path" value="$(find app_human_track)/src/models/mobilenet-v1-ssd-mp-0_675.pth" />
+    <param name="label_path" value="$(find app_human_track)/src/models/voc-model-labels.txt" />  
+  </node>
+  
+</launch>

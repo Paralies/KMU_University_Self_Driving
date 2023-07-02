@@ -1,0 +1,12 @@
+<launch>
+
+  <!-- motor node -->
+  <include file="$(find xycar_motor)/launch/xycar_motor.launch" />
+
+  <!-- USB Camera node -->
+  <include file="$(find usb_cam)/launch/xycar_cam.launch" />
+
+  <!-- android joy drive -->
+  <node name="joystick_cam" pkg="app_joystick_cam" type="app_joystick_cam.py" output="screen"/>
+
+</launch>
